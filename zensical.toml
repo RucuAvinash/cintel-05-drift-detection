@@ -8,8 +8,8 @@
 
 [project]
 site_name = "Continuous Intelligence"
-site_url = "https://denisecase.github.io/cintel-05-drift-detection/"
-repo_url = "https://github.com/denisecase/cintel-05-drift-detection"
+site_url = "https://RucuAvinash.github.io/cintel-05-drift-detection/"
+repo_url = "https://github.com/RucuAvinash/cintel-05-drift-detection"
 repo_name = "denisecase/cintel-05-drift-detection"
 site_description = "Continuous Intelligence project documentation"
 docs_dir = "docs" # source directory for documentation markdown files
@@ -19,7 +19,7 @@ edit_uri = "edit/main/docs/" # "Edit this page" links (GitHub)
 [project.extra]
 # WHY: Social links provide easy access to project repositories and profiles.
 social = [
-    {icon = "fontawesome/brands/github", link = "https://github.com/denisecase/cintel-05-drift-detection" },
+    {icon = "fontawesome/brands/github", link = "https://github.com/RucuAvinash/cintel-05-drift-detection" },
 ]
 
 # ------------------------------------------------------------
