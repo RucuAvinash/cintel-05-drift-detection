@@ -1022,3 +1022,183 @@
 2026-04-08 19:15:21 | INFO | P5 | Pipeline executed successfully!
 2026-04-08 19:15:21 | INFO | P5 | ========================
 2026-04-08 19:15:21 | INFO | P5 | END main()
+2026-04-08 20:10:18 | INFO | P5 | === RUN START ===
+2026-04-08 20:10:18 | INFO | P5 | project=CINTEL
+2026-04-08 20:10:18 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 20:10:18 | INFO | P5 | python=3.14.2
+2026-04-08 20:10:18 | INFO | P5 | os=Windows 11
+2026-04-08 20:10:18 | INFO | P5 | shell=powershell
+2026-04-08 20:10:18 | INFO | P5 | cwd=.
+2026-04-08 20:10:18 | INFO | P5 | github_actions=False
+2026-04-08 20:10:18 | INFO | P5 | ========================
+2026-04-08 20:10:18 | INFO | P5 | START main()
+2026-04-08 20:10:18 | INFO | P5 | ========================
+2026-04-08 20:10:18 | INFO | P5 | ROOT_DIR = .
+2026-04-08 20:10:18 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_coffee.csv
+2026-04-08 20:10:18 | INFO | P5 | CURRENT_FILE = data\current_metrics_coffee.csv
+2026-04-08 20:10:18 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_coffee.csv
+2026-04-08 20:10:18 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 20:10:18 | INFO | P5 | Loaded 10 reference records
+2026-04-08 20:10:18 | INFO | P5 | Loaded 10 current records
+2026-04-08 20:14:44 | INFO | P5 | === RUN START ===
+2026-04-08 20:14:44 | INFO | P5 | project=CINTEL
+2026-04-08 20:14:44 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 20:14:44 | INFO | P5 | python=3.14.2
+2026-04-08 20:14:44 | INFO | P5 | os=Windows 11
+2026-04-08 20:14:44 | INFO | P5 | shell=powershell
+2026-04-08 20:14:44 | INFO | P5 | cwd=.
+2026-04-08 20:14:44 | INFO | P5 | github_actions=False
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | START main()
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | ROOT_DIR = .
+2026-04-08 20:14:44 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_coffee.csv
+2026-04-08 20:14:44 | INFO | P5 | CURRENT_FILE = data\current_metrics_coffee.csv
+2026-04-08 20:14:44 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_coffee.csv
+2026-04-08 20:14:44 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 20:14:44 | INFO | P5 | Loaded 10 reference records
+2026-04-08 20:14:44 | INFO | P5 | Loaded 10 current records
+2026-04-08 20:14:44 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-08 20:14:44 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_coffee.csv
+2026-04-08 20:14:44 | INFO | P5 | Drift summary dataframe:
+2026-04-08 20:14:44 | INFO | P5 | shape: (1, 18)
+┌────────────────┬────────────────┬────────────────┬────────────────┬───┬────────────────┬────────────────┬───────────────┬───────────────┐
+│ reference_avg_ ┆ reference_avg_ ┆ reference_avg_ ┆ current_avg_or ┆ … ┆ wait_time_is_d ┆ orders_pct_dri ┆ complaints_pc ┆ wait_time_pct │
+│ orders         ┆ complaints     ┆ wait_time_ms   ┆ ders           ┆   ┆ rifting_flag   ┆ ft_flag        ┆ t_drift_flag  ┆ _drift_flag   │
+│ ---            ┆ ---            ┆ ---            ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---           ┆ ---           │
+│ f64            ┆ f64            ┆ f64            ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool          ┆ bool          │
+╞════════════════╪════════════════╪════════════════╪════════════════╪═══╪════════════════╪════════════════╪═══════════════╪═══════════════╡
+│ 98.9           ┆ 1.8            ┆ 2908.0         ┆ 192.5          ┆ … ┆ true           ┆ true           ┆ true          ┆ true          │
+└────────────────┴────────────────┴────────────────┴────────────────┴───┴────────────────┴────────────────┴───────────────┴───────────────┘
+2026-04-08 20:14:44 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-08 20:14:44 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | Drift Detection Process: 
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | 1. Summarize each period with means.
+2026-04-08 20:14:44 | INFO | P5 | 2. Compute difference of means.
+2026-04-08 20:14:44 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | Drift summary (one field per line):
+2026-04-08 20:14:44 | INFO | P5 | reference_avg_orders: 98.9
+2026-04-08 20:14:44 | INFO | P5 | reference_avg_complaints: 1.8
+2026-04-08 20:14:44 | INFO | P5 | reference_avg_wait_time_ms: 2908.0
+2026-04-08 20:14:44 | INFO | P5 | current_avg_orders: 192.5
+2026-04-08 20:14:44 | INFO | P5 | current_avg_complaints: 9.6
+2026-04-08 20:14:44 | INFO | P5 | current_avg_wait_time_ms: 5915.0
+2026-04-08 20:14:44 | INFO | P5 | orders_mean_difference: 93.6
+2026-04-08 20:14:44 | INFO | P5 | complaints_mean_difference: 7.8
+2026-04-08 20:14:44 | INFO | P5 | wait_time_mean_difference_ms: 3007.0
+2026-04-08 20:14:44 | INFO | P5 | orders_pct_drift: 94.64
+2026-04-08 20:14:44 | INFO | P5 | complaints_pct_drift: 433.33
+2026-04-08 20:14:44 | INFO | P5 | wait_time_pct_drift: 103.4
+2026-04-08 20:14:44 | INFO | P5 | orders_is_drifting_flag: True
+2026-04-08 20:14:44 | INFO | P5 | complaints_is_drifting_flag: True
+2026-04-08 20:14:44 | INFO | P5 | wait_time_is_drifting_flag: True
+2026-04-08 20:14:44 | INFO | P5 | orders_pct_drift_flag: True
+2026-04-08 20:14:44 | INFO | P5 | complaints_pct_drift_flag: True
+2026-04-08 20:14:44 | INFO | P5 | wait_time_pct_drift_flag: True
+2026-04-08 20:14:44 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_coffee.csv
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | Pipeline executed successfully!
+2026-04-08 20:14:44 | INFO | P5 | ========================
+2026-04-08 20:14:44 | INFO | P5 | END main()
+2026-04-08 20:16:23 | INFO | P5 | === RUN START ===
+2026-04-08 20:16:23 | INFO | P5 | project=CINTEL
+2026-04-08 20:16:23 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 20:16:23 | INFO | P5 | python=3.14.2
+2026-04-08 20:16:23 | INFO | P5 | os=Windows 11
+2026-04-08 20:16:23 | INFO | P5 | shell=powershell
+2026-04-08 20:16:23 | INFO | P5 | cwd=.
+2026-04-08 20:16:23 | INFO | P5 | github_actions=False
+2026-04-08 20:16:23 | INFO | P5 | ========================
+2026-04-08 20:16:23 | INFO | P5 | START main()
+2026-04-08 20:16:23 | INFO | P5 | ========================
+2026-04-08 20:16:23 | INFO | P5 | ROOT_DIR = .
+2026-04-08 20:16:23 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_coffee.csv
+2026-04-08 20:16:23 | INFO | P5 | CURRENT_FILE = data\current_metrics_coffee.csv
+2026-04-08 20:16:23 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_coffee.csv
+2026-04-08 20:16:23 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 20:16:23 | INFO | P5 | Loaded 10 reference records
+2026-04-08 20:16:23 | INFO | P5 | Loaded 10 current records
+2026-04-08 20:18:52 | INFO | P5 | === RUN START ===
+2026-04-08 20:18:52 | INFO | P5 | project=CINTEL
+2026-04-08 20:18:52 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 20:18:52 | INFO | P5 | python=3.14.2
+2026-04-08 20:18:52 | INFO | P5 | os=Windows 11
+2026-04-08 20:18:52 | INFO | P5 | shell=powershell
+2026-04-08 20:18:52 | INFO | P5 | cwd=.
+2026-04-08 20:18:52 | INFO | P5 | github_actions=False
+2026-04-08 20:18:52 | INFO | P5 | ========================
+2026-04-08 20:18:52 | INFO | P5 | START main()
+2026-04-08 20:18:52 | INFO | P5 | ========================
+2026-04-08 20:18:52 | INFO | P5 | ROOT_DIR = .
+2026-04-08 20:18:52 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_coffee.csv
+2026-04-08 20:18:52 | INFO | P5 | CURRENT_FILE = data\current_metrics_coffee.csv
+2026-04-08 20:18:52 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_coffee.csv
+2026-04-08 20:18:52 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 20:18:52 | INFO | P5 | Loaded 10 reference records
+2026-04-08 20:18:52 | INFO | P5 | Loaded 10 current records
+2026-04-08 20:20:42 | INFO | P5 | === RUN START ===
+2026-04-08 20:20:42 | INFO | P5 | project=CINTEL
+2026-04-08 20:20:42 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 20:20:42 | INFO | P5 | python=3.14.2
+2026-04-08 20:20:42 | INFO | P5 | os=Windows 11
+2026-04-08 20:20:42 | INFO | P5 | shell=powershell
+2026-04-08 20:20:42 | INFO | P5 | cwd=.
+2026-04-08 20:20:42 | INFO | P5 | github_actions=False
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | START main()
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | ROOT_DIR = .
+2026-04-08 20:20:42 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_coffee.csv
+2026-04-08 20:20:42 | INFO | P5 | CURRENT_FILE = data\current_metrics_coffee.csv
+2026-04-08 20:20:42 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_coffee.csv
+2026-04-08 20:20:42 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 20:20:42 | INFO | P5 | Loaded 10 reference records
+2026-04-08 20:20:42 | INFO | P5 | Loaded 10 current records
+2026-04-08 20:20:42 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-08 20:20:42 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_coffee.csv
+2026-04-08 20:20:42 | INFO | P5 | Drift summary dataframe:
+2026-04-08 20:20:42 | INFO | P5 | shape: (1, 18)
+┌────────────────┬────────────────┬────────────────┬────────────────┬───┬────────────────┬────────────────┬───────────────┬───────────────┐
+│ reference_avg_ ┆ reference_avg_ ┆ reference_avg_ ┆ current_avg_or ┆ … ┆ wait_time_is_d ┆ orders_pct_dri ┆ complaints_pc ┆ wait_time_pct │
+│ orders         ┆ complaints     ┆ wait_time_ms   ┆ ders           ┆   ┆ rifting_flag   ┆ ft_flag        ┆ t_drift_flag  ┆ _drift_flag   │
+│ ---            ┆ ---            ┆ ---            ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---           ┆ ---           │
+│ f64            ┆ f64            ┆ f64            ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool          ┆ bool          │
+╞════════════════╪════════════════╪════════════════╪════════════════╪═══╪════════════════╪════════════════╪═══════════════╪═══════════════╡
+│ 98.9           ┆ 1.8            ┆ 2908.0         ┆ 192.5          ┆ … ┆ true           ┆ true           ┆ true          ┆ true          │
+└────────────────┴────────────────┴────────────────┴────────────────┴───┴────────────────┴────────────────┴───────────────┴───────────────┘
+2026-04-08 20:20:42 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-08 20:20:42 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | Drift Detection Process: 
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | 1. Summarize each period with means.
+2026-04-08 20:20:42 | INFO | P5 | 2. Compute difference of means.
+2026-04-08 20:20:42 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | Drift summary (one field per line):
+2026-04-08 20:20:42 | INFO | P5 | reference_avg_orders: 98.9
+2026-04-08 20:20:42 | INFO | P5 | reference_avg_complaints: 1.8
+2026-04-08 20:20:42 | INFO | P5 | reference_avg_wait_time_ms: 2908.0
+2026-04-08 20:20:42 | INFO | P5 | current_avg_orders: 192.5
+2026-04-08 20:20:42 | INFO | P5 | current_avg_complaints: 9.6
+2026-04-08 20:20:42 | INFO | P5 | current_avg_wait_time_ms: 5915.0
+2026-04-08 20:20:42 | INFO | P5 | orders_mean_difference: 93.6
+2026-04-08 20:20:42 | INFO | P5 | complaints_mean_difference: 7.8
+2026-04-08 20:20:42 | INFO | P5 | wait_time_mean_difference_ms: 3007.0
+2026-04-08 20:20:42 | INFO | P5 | orders_pct_drift: 94.64
+2026-04-08 20:20:42 | INFO | P5 | complaints_pct_drift: 433.33
+2026-04-08 20:20:42 | INFO | P5 | wait_time_pct_drift: 103.4
+2026-04-08 20:20:42 | INFO | P5 | orders_is_drifting_flag: True
+2026-04-08 20:20:42 | INFO | P5 | complaints_is_drifting_flag: True
+2026-04-08 20:20:42 | INFO | P5 | wait_time_is_drifting_flag: True
+2026-04-08 20:20:42 | INFO | P5 | orders_pct_drift_flag: True
+2026-04-08 20:20:42 | INFO | P5 | complaints_pct_drift_flag: True
+2026-04-08 20:20:42 | INFO | P5 | wait_time_pct_drift_flag: True
+2026-04-08 20:20:42 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_coffee.csv
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | Pipeline executed successfully!
+2026-04-08 20:20:42 | INFO | P5 | ========================
+2026-04-08 20:20:42 | INFO | P5 | END main()

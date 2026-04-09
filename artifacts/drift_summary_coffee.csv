@@ -1,0 +1,2 @@
+reference_avg_orders,reference_avg_complaints,reference_avg_wait_time_ms,current_avg_orders,current_avg_complaints,current_avg_wait_time_ms,orders_mean_difference,complaints_mean_difference,wait_time_mean_difference_ms,orders_pct_drift,complaints_pct_drift,wait_time_pct_drift,orders_is_drifting_flag,complaints_is_drifting_flag,wait_time_is_drifting_flag,orders_pct_drift_flag,complaints_pct_drift_flag,wait_time_pct_drift_flag
+98.9,1.8,2908.0,192.5,9.6,5915.0,93.6,7.8,3007.0,94.64,433.33,103.4,true,true,true,true,true,true
