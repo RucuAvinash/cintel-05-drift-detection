@@ -1,0 +1,2 @@
+reference_avg_requests,reference_avg_errors,reference_avg_latency_ms,current_avg_requests,current_avg_errors,current_avg_latency_ms,requests_mean_difference,errors_mean_difference,latency_mean_difference_ms,requests_pct_drift,errors_pct_drift,latency_pct_drift,requests_is_drifting_flag,errors_is_drifting_flag,latency_is_drifting_flag,requests_pct_drift_flag,errors_pct_drift_flag,latency_pct_drift_flag
+128.3,2.3,3835.0,164.5,6.3,5670.0,36.2,4.0,1835.0,28.22,173.91,47.85,false,true,true,false,true,false

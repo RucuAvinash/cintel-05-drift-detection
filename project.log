@@ -55,3 +55,970 @@
 2026-04-05 11:48:22 | INFO | P5 | Pipeline executed successfully!
 2026-04-05 11:48:22 | INFO | P5 | ========================
 2026-04-05 11:48:22 | INFO | P5 | END main()
+2026-04-06 21:29:27 | INFO | P5 | === RUN START ===
+2026-04-06 21:29:27 | INFO | P5 | project=CINTEL
+2026-04-06 21:29:27 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-06 21:29:27 | INFO | P5 | python=3.14.2
+2026-04-06 21:29:27 | INFO | P5 | os=Windows 11
+2026-04-06 21:29:27 | INFO | P5 | shell=powershell
+2026-04-06 21:29:27 | INFO | P5 | cwd=.
+2026-04-06 21:29:27 | INFO | P5 | github_actions=False
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | START main()
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | ROOT_DIR = .
+2026-04-06 21:29:27 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_case.csv
+2026-04-06 21:29:27 | INFO | P5 | CURRENT_FILE = data\current_metrics_case.csv
+2026-04-06 21:29:27 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_case.csv
+2026-04-06 21:29:27 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-06 21:29:27 | INFO | P5 | Loaded 10 reference records
+2026-04-06 21:29:27 | INFO | P5 | Loaded 10 current records
+2026-04-06 21:29:27 | INFO | P5 | Calculated summary differences and drift flags
+2026-04-06 21:29:27 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_case.csv
+2026-04-06 21:29:27 | INFO | P5 | Drift summary dataframe:
+2026-04-06 21:29:27 | INFO | P5 | shape: (1, 12)
+┌────────────────┬────────────────┬────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬───────────────┐
+│ reference_avg_ ┆ reference_avg_ ┆ reference_avg_ ┆ current_avg_re ┆ … ┆ latency_mean_d ┆ requests_is_dr ┆ errors_is_drif ┆ latency_is_dr │
+│ requests       ┆ errors         ┆ latency_ms     ┆ quests         ┆   ┆ ifference_ms   ┆ ifting_flag    ┆ ting_flag      ┆ ifting_flag   │
+│ ---            ┆ ---            ┆ ---            ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---           │
+│ f64            ┆ f64            ┆ f64            ┆ f64            ┆   ┆ f64            ┆ bool           ┆ bool           ┆ bool          │
+╞════════════════╪════════════════╪════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪═══════════════╡
+│ 128.3          ┆ 2.3            ┆ 3835.0         ┆ 164.5          ┆ … ┆ 1835.0         ┆ true           ┆ true           ┆ true          │
+└────────────────┴────────────────┴────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴───────────────┘
+2026-04-06 21:29:27 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-06 21:29:27 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | Drift Detection Process: 
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | 1. Summarize each period with means.
+2026-04-06 21:29:27 | INFO | P5 | 2. Compute difference of means.
+2026-04-06 21:29:27 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | Drift summary (one field per line):
+2026-04-06 21:29:27 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-06 21:29:27 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-06 21:29:27 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-06 21:29:27 | INFO | P5 | current_avg_requests: 164.5
+2026-04-06 21:29:27 | INFO | P5 | current_avg_errors: 6.3
+2026-04-06 21:29:27 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-06 21:29:27 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-06 21:29:27 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-06 21:29:27 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-06 21:29:27 | INFO | P5 | requests_is_drifting_flag: True
+2026-04-06 21:29:27 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-06 21:29:27 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-06 21:29:27 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_case.csv
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | Pipeline executed successfully!
+2026-04-06 21:29:27 | INFO | P5 | ========================
+2026-04-06 21:29:27 | INFO | P5 | END main()
+2026-04-06 22:32:56 | INFO | P5 | === RUN START ===
+2026-04-06 22:32:56 | INFO | P5 | project=CINTEL
+2026-04-06 22:32:56 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-06 22:32:56 | INFO | P5 | python=3.14.2
+2026-04-06 22:32:56 | INFO | P5 | os=Windows 11
+2026-04-06 22:32:56 | INFO | P5 | shell=powershell
+2026-04-06 22:32:56 | INFO | P5 | cwd=.
+2026-04-06 22:32:56 | INFO | P5 | github_actions=False
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | START main()
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | ROOT_DIR = .
+2026-04-06 22:32:56 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_case.csv
+2026-04-06 22:32:56 | INFO | P5 | CURRENT_FILE = data\current_metrics_case.csv
+2026-04-06 22:32:56 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_case.csv
+2026-04-06 22:32:56 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-06 22:32:56 | INFO | P5 | Loaded 10 reference records
+2026-04-06 22:32:56 | INFO | P5 | Loaded 10 current records
+2026-04-06 22:32:56 | INFO | P5 | Calculated summary differences and drift flags
+2026-04-06 22:32:56 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_case.csv
+2026-04-06 22:32:56 | INFO | P5 | Drift summary dataframe:
+2026-04-06 22:32:56 | INFO | P5 | shape: (1, 12)
+┌────────────────┬────────────────┬────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬───────────────┐
+│ reference_avg_ ┆ reference_avg_ ┆ reference_avg_ ┆ current_avg_re ┆ … ┆ latency_mean_d ┆ requests_is_dr ┆ errors_is_drif ┆ latency_is_dr │
+│ requests       ┆ errors         ┆ latency_ms     ┆ quests         ┆   ┆ ifference_ms   ┆ ifting_flag    ┆ ting_flag      ┆ ifting_flag   │
+│ ---            ┆ ---            ┆ ---            ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---           │
+│ f64            ┆ f64            ┆ f64            ┆ f64            ┆   ┆ f64            ┆ bool           ┆ bool           ┆ bool          │
+╞════════════════╪════════════════╪════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪═══════════════╡
+│ 128.3          ┆ 2.3            ┆ 3835.0         ┆ 164.5          ┆ … ┆ 1835.0         ┆ true           ┆ true           ┆ true          │
+└────────────────┴────────────────┴────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴───────────────┘
+2026-04-06 22:32:56 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-06 22:32:56 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | Drift Detection Process: 
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | 1. Summarize each period with means.
+2026-04-06 22:32:56 | INFO | P5 | 2. Compute difference of means.
+2026-04-06 22:32:56 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | Drift summary (one field per line):
+2026-04-06 22:32:56 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-06 22:32:56 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-06 22:32:56 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-06 22:32:56 | INFO | P5 | current_avg_requests: 164.5
+2026-04-06 22:32:56 | INFO | P5 | current_avg_errors: 6.3
+2026-04-06 22:32:56 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-06 22:32:56 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-06 22:32:56 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-06 22:32:56 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-06 22:32:56 | INFO | P5 | requests_is_drifting_flag: True
+2026-04-06 22:32:56 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-06 22:32:56 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-06 22:32:56 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_case.csv
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | Pipeline executed successfully!
+2026-04-06 22:32:56 | INFO | P5 | ========================
+2026-04-06 22:32:56 | INFO | P5 | END main()
+2026-04-06 22:33:43 | INFO | P5 | === RUN START ===
+2026-04-06 22:33:43 | INFO | P5 | project=CINTEL
+2026-04-06 22:33:43 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-06 22:33:43 | INFO | P5 | python=3.14.2
+2026-04-06 22:33:43 | INFO | P5 | os=Windows 11
+2026-04-06 22:33:43 | INFO | P5 | shell=powershell
+2026-04-06 22:33:43 | INFO | P5 | cwd=.
+2026-04-06 22:33:43 | INFO | P5 | github_actions=False
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | START main()
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | ROOT_DIR = .
+2026-04-06 22:33:43 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-06 22:33:43 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-06 22:33:43 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-06 22:33:43 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-06 22:33:43 | INFO | P5 | Loaded 10 reference records
+2026-04-06 22:33:43 | INFO | P5 | Loaded 10 current records
+2026-04-06 22:33:43 | INFO | P5 | Calculated summary differences and drift flags
+2026-04-06 22:33:43 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_rucu.csv
+2026-04-06 22:33:43 | INFO | P5 | Drift summary dataframe:
+2026-04-06 22:33:43 | INFO | P5 | shape: (1, 13)
+┌────────────────┬────────────────┬────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬───────────────┐
+│ reference_avg_ ┆ reference_avg_ ┆ reference_avg_ ┆ current_avg_re ┆ … ┆ requests_is_dr ┆ errors_is_drif ┆ latency_is_dri ┆ drift_severit │
+│ requests       ┆ errors         ┆ latency_ms     ┆ quests         ┆   ┆ ifting_flag    ┆ ting_flag      ┆ fting_flag     ┆ y_code        │
+│ ---            ┆ ---            ┆ ---            ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---           │
+│ f64            ┆ f64            ┆ f64            ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool           ┆ f64           │
+╞════════════════╪════════════════╪════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪═══════════════╡
+│ 128.3          ┆ 2.3            ┆ 3835.0         ┆ 164.5          ┆ … ┆ true           ┆ true           ┆ true           ┆ 61293.67      │
+└────────────────┴────────────────┴────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴───────────────┘
+2026-04-06 22:33:43 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-06 22:33:43 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | Drift Detection Process: 
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | 1. Summarize each period with means.
+2026-04-06 22:33:43 | INFO | P5 | 2. Compute difference of means.
+2026-04-06 22:33:43 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | Drift summary (one field per line):
+2026-04-06 22:33:43 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-06 22:33:43 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-06 22:33:43 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-06 22:33:43 | INFO | P5 | current_avg_requests: 164.5
+2026-04-06 22:33:43 | INFO | P5 | current_avg_errors: 6.3
+2026-04-06 22:33:43 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-06 22:33:43 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-06 22:33:43 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-06 22:33:43 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-06 22:33:43 | INFO | P5 | requests_is_drifting_flag: True
+2026-04-06 22:33:43 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-06 22:33:43 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-06 22:33:43 | INFO | P5 | drift_severity_code: 61293.67
+2026-04-06 22:33:43 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | Pipeline executed successfully!
+2026-04-06 22:33:43 | INFO | P5 | ========================
+2026-04-06 22:33:43 | INFO | P5 | END main()
+2026-04-07 18:01:47 | INFO | P5 | === RUN START ===
+2026-04-07 18:01:47 | INFO | P5 | project=CINTEL
+2026-04-07 18:01:47 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 18:01:47 | INFO | P5 | python=3.14.2
+2026-04-07 18:01:47 | INFO | P5 | os=Windows 11
+2026-04-07 18:01:47 | INFO | P5 | shell=powershell
+2026-04-07 18:01:47 | INFO | P5 | cwd=.
+2026-04-07 18:01:47 | INFO | P5 | github_actions=False
+2026-04-07 18:01:47 | INFO | P5 | ========================
+2026-04-07 18:01:47 | INFO | P5 | START main()
+2026-04-07 18:01:47 | INFO | P5 | ========================
+2026-04-07 18:01:47 | INFO | P5 | ROOT_DIR = .
+2026-04-07 18:01:47 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 18:01:47 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 18:01:47 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 18:01:47 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 18:01:47 | INFO | P5 | Loaded 10 reference records
+2026-04-07 18:01:47 | INFO | P5 | Loaded 10 current records
+2026-04-07 18:08:07 | INFO | P5 | === RUN START ===
+2026-04-07 18:08:07 | INFO | P5 | project=CINTEL
+2026-04-07 18:08:07 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 18:08:07 | INFO | P5 | python=3.14.2
+2026-04-07 18:08:07 | INFO | P5 | os=Windows 11
+2026-04-07 18:08:07 | INFO | P5 | shell=powershell
+2026-04-07 18:08:07 | INFO | P5 | cwd=.
+2026-04-07 18:08:07 | INFO | P5 | github_actions=False
+2026-04-07 18:08:07 | INFO | P5 | ========================
+2026-04-07 18:08:07 | INFO | P5 | START main()
+2026-04-07 18:08:07 | INFO | P5 | ========================
+2026-04-07 18:08:07 | INFO | P5 | ROOT_DIR = .
+2026-04-07 18:08:07 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 18:08:07 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 18:08:07 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 18:08:07 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 18:08:07 | INFO | P5 | Loaded 10 reference records
+2026-04-07 18:08:07 | INFO | P5 | Loaded 10 current records
+2026-04-07 18:20:47 | INFO | P5 | === RUN START ===
+2026-04-07 18:20:47 | INFO | P5 | project=CINTEL
+2026-04-07 18:20:47 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 18:20:47 | INFO | P5 | python=3.14.2
+2026-04-07 18:20:47 | INFO | P5 | os=Windows 11
+2026-04-07 18:20:47 | INFO | P5 | shell=powershell
+2026-04-07 18:20:47 | INFO | P5 | cwd=.
+2026-04-07 18:20:47 | INFO | P5 | github_actions=False
+2026-04-07 18:20:47 | INFO | P5 | ========================
+2026-04-07 18:20:47 | INFO | P5 | START main()
+2026-04-07 18:20:47 | INFO | P5 | ========================
+2026-04-07 18:20:47 | INFO | P5 | ROOT_DIR = .
+2026-04-07 18:20:47 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 18:20:47 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 18:20:47 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 18:20:47 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 18:20:47 | INFO | P5 | Loaded 10 reference records
+2026-04-07 18:20:47 | INFO | P5 | Loaded 10 current records
+2026-04-07 19:55:57 | INFO | P5 | === RUN START ===
+2026-04-07 19:55:57 | INFO | P5 | project=CINTEL
+2026-04-07 19:55:57 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 19:55:57 | INFO | P5 | python=3.14.2
+2026-04-07 19:55:57 | INFO | P5 | os=Windows 11
+2026-04-07 19:55:57 | INFO | P5 | shell=powershell
+2026-04-07 19:55:57 | INFO | P5 | cwd=.
+2026-04-07 19:55:57 | INFO | P5 | github_actions=False
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | START main()
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | ROOT_DIR = .
+2026-04-07 19:55:57 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 19:55:57 | INFO | P5 | Loaded 10 reference records
+2026-04-07 19:55:57 | INFO | P5 | Loaded 10 current records
+2026-04-07 19:55:57 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-07 19:55:57 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | Drift summary dataframe:
+2026-04-07 19:55:57 | INFO | P5 | shape: (1, 18)
+┌─────────────────┬─────────────────┬─────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬────────────────┐
+│ reference_avg_r ┆ reference_avg_e ┆ reference_avg_l ┆ current_avg_re ┆ … ┆ latency_is_dri ┆ requests_pct_d ┆ errors_pct_dri ┆ latency_pct_dr │
+│ equests         ┆ rrors           ┆ atency_ms       ┆ quests         ┆   ┆ fting_flag     ┆ rift_flag      ┆ ft_flag        ┆ ift_flag       │
+│ ---             ┆ ---             ┆ ---             ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---            │
+│ f64             ┆ f64             ┆ f64             ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool           ┆ bool           │
+╞═════════════════╪═════════════════╪═════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪════════════════╡
+│ 128.3           ┆ 2.3             ┆ 3835.0          ┆ 164.5          ┆ … ┆ true           ┆ true           ┆ true           ┆ true           │
+└─────────────────┴─────────────────┴─────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴────────────────┘
+2026-04-07 19:55:57 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-07 19:55:57 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Drift Detection Process: 
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | 1. Summarize each period with means.
+2026-04-07 19:55:57 | INFO | P5 | 2. Compute difference of means.
+2026-04-07 19:55:57 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Drift summary (one field per line):
+2026-04-07 19:55:57 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | current_avg_requests: 164.5
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | current_avg_errors: 6.3
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | requests_pct_drift: 28.21512081060016
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | errors_pct_drift: 173.91304347826087
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | latency_pct_drift: 47.84876140808344
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | requests_is_drifting_flag: True
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | requests_pct_drift_flag: True
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | errors_pct_drift_flag: True
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 19:55:57 | INFO | P5 | latency_pct_drift_flag: True
+2026-04-07 19:55:57 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 19:55:57 | INFO | P5 | ========================
+2026-04-07 19:55:57 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | === RUN START ===
+2026-04-07 20:01:55 | INFO | P5 | project=CINTEL
+2026-04-07 20:01:55 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 20:01:55 | INFO | P5 | python=3.14.2
+2026-04-07 20:01:55 | INFO | P5 | os=Windows 11
+2026-04-07 20:01:55 | INFO | P5 | shell=powershell
+2026-04-07 20:01:55 | INFO | P5 | cwd=.
+2026-04-07 20:01:55 | INFO | P5 | github_actions=False
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | START main()
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | ROOT_DIR = .
+2026-04-07 20:01:55 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 20:01:55 | INFO | P5 | Loaded 10 reference records
+2026-04-07 20:01:55 | INFO | P5 | Loaded 10 current records
+2026-04-07 20:01:55 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-07 20:01:55 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | Drift summary dataframe:
+2026-04-07 20:01:55 | INFO | P5 | shape: (1, 18)
+┌─────────────────┬─────────────────┬─────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬────────────────┐
+│ reference_avg_r ┆ reference_avg_e ┆ reference_avg_l ┆ current_avg_re ┆ … ┆ latency_is_dri ┆ requests_pct_d ┆ errors_pct_dri ┆ latency_pct_dr │
+│ equests         ┆ rrors           ┆ atency_ms       ┆ quests         ┆   ┆ fting_flag     ┆ rift_flag      ┆ ft_flag        ┆ ift_flag       │
+│ ---             ┆ ---             ┆ ---             ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---            │
+│ f64             ┆ f64             ┆ f64             ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool           ┆ bool           │
+╞═════════════════╪═════════════════╪═════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪════════════════╡
+│ 128.3           ┆ 2.3             ┆ 3835.0          ┆ 164.5          ┆ … ┆ true           ┆ true           ┆ true           ┆ true           │
+└─────────────────┴─────────────────┴─────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴────────────────┘
+2026-04-07 20:01:55 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-07 20:01:55 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Drift Detection Process: 
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | 1. Summarize each period with means.
+2026-04-07 20:01:55 | INFO | P5 | 2. Compute difference of means.
+2026-04-07 20:01:55 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Drift summary (one field per line):
+2026-04-07 20:01:55 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | current_avg_requests: 164.5
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | current_avg_errors: 6.3
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | requests_pct_drift: 28.22
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | errors_pct_drift: 173.91
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | latency_pct_drift: 47.85
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | requests_is_drifting_flag: True
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | requests_pct_drift_flag: True
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | errors_pct_drift_flag: True
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:01:55 | INFO | P5 | latency_pct_drift_flag: True
+2026-04-07 20:01:55 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:01:55 | INFO | P5 | ========================
+2026-04-07 20:01:55 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | === RUN START ===
+2026-04-07 20:03:50 | INFO | P5 | project=CINTEL
+2026-04-07 20:03:50 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 20:03:50 | INFO | P5 | python=3.14.2
+2026-04-07 20:03:50 | INFO | P5 | os=Windows 11
+2026-04-07 20:03:50 | INFO | P5 | shell=powershell
+2026-04-07 20:03:50 | INFO | P5 | cwd=.
+2026-04-07 20:03:50 | INFO | P5 | github_actions=False
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | START main()
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | ROOT_DIR = .
+2026-04-07 20:03:50 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 20:03:50 | INFO | P5 | Loaded 10 reference records
+2026-04-07 20:03:50 | INFO | P5 | Loaded 10 current records
+2026-04-07 20:03:50 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-07 20:03:50 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | Drift summary dataframe:
+2026-04-07 20:03:50 | INFO | P5 | shape: (1, 18)
+┌─────────────────┬─────────────────┬─────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬────────────────┐
+│ reference_avg_r ┆ reference_avg_e ┆ reference_avg_l ┆ current_avg_re ┆ … ┆ latency_is_dri ┆ requests_pct_d ┆ errors_pct_dri ┆ latency_pct_dr │
+│ equests         ┆ rrors           ┆ atency_ms       ┆ quests         ┆   ┆ fting_flag     ┆ rift_flag      ┆ ft_flag        ┆ ift_flag       │
+│ ---             ┆ ---             ┆ ---             ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---            │
+│ f64             ┆ f64             ┆ f64             ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool           ┆ bool           │
+╞═════════════════╪═════════════════╪═════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪════════════════╡
+│ 128.3           ┆ 2.3             ┆ 3835.0          ┆ 164.5          ┆ … ┆ true           ┆ false          ┆ true           ┆ false          │
+└─────────────────┴─────────────────┴─────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴────────────────┘
+2026-04-07 20:03:50 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-07 20:03:50 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Drift Detection Process: 
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | 1. Summarize each period with means.
+2026-04-07 20:03:50 | INFO | P5 | 2. Compute difference of means.
+2026-04-07 20:03:50 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Drift summary (one field per line):
+2026-04-07 20:03:50 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | current_avg_requests: 164.5
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | current_avg_errors: 6.3
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | requests_pct_drift: 28.22
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | errors_pct_drift: 173.91
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | latency_pct_drift: 47.85
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | requests_is_drifting_flag: True
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | requests_pct_drift_flag: False
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | errors_pct_drift_flag: True
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:03:50 | INFO | P5 | latency_pct_drift_flag: False
+2026-04-07 20:03:50 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:03:50 | INFO | P5 | ========================
+2026-04-07 20:03:50 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | === RUN START ===
+2026-04-07 20:05:47 | INFO | P5 | project=CINTEL
+2026-04-07 20:05:47 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-07 20:05:47 | INFO | P5 | python=3.14.2
+2026-04-07 20:05:47 | INFO | P5 | os=Windows 11
+2026-04-07 20:05:47 | INFO | P5 | shell=powershell
+2026-04-07 20:05:47 | INFO | P5 | cwd=.
+2026-04-07 20:05:47 | INFO | P5 | github_actions=False
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | START main()
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | ROOT_DIR = .
+2026-04-07 20:05:47 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-07 20:05:47 | INFO | P5 | Loaded 10 reference records
+2026-04-07 20:05:47 | INFO | P5 | Loaded 10 current records
+2026-04-07 20:05:47 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-07 20:05:47 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | Drift summary dataframe:
+2026-04-07 20:05:47 | INFO | P5 | shape: (1, 18)
+┌─────────────────┬─────────────────┬─────────────────┬────────────────┬───┬────────────────┬────────────────┬────────────────┬────────────────┐
+│ reference_avg_r ┆ reference_avg_e ┆ reference_avg_l ┆ current_avg_re ┆ … ┆ latency_is_dri ┆ requests_pct_d ┆ errors_pct_dri ┆ latency_pct_dr │
+│ equests         ┆ rrors           ┆ atency_ms       ┆ quests         ┆   ┆ fting_flag     ┆ rift_flag      ┆ ft_flag        ┆ ift_flag       │
+│ ---             ┆ ---             ┆ ---             ┆ ---            ┆   ┆ ---            ┆ ---            ┆ ---            ┆ ---            │
+│ f64             ┆ f64             ┆ f64             ┆ f64            ┆   ┆ bool           ┆ bool           ┆ bool           ┆ bool           │
+╞═════════════════╪═════════════════╪═════════════════╪════════════════╪═══╪════════════════╪════════════════╪════════════════╪════════════════╡
+│ 128.3           ┆ 2.3             ┆ 3835.0          ┆ 164.5          ┆ … ┆ false          ┆ false          ┆ true           ┆ false          │
+└─────────────────┴─────────────────┴─────────────────┴────────────────┴───┴────────────────┴────────────────┴────────────────┴────────────────┘
+2026-04-07 20:05:47 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-07 20:05:47 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Drift Detection Process: 
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | 1. Summarize each period with means.
+2026-04-07 20:05:47 | INFO | P5 | 2. Compute difference of means.
+2026-04-07 20:05:47 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Drift summary (one field per line):
+2026-04-07 20:05:47 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | current_avg_requests: 164.5
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | current_avg_errors: 6.3
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | requests_pct_drift: 28.22
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | errors_pct_drift: 173.91
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | latency_pct_drift: 47.85
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | requests_is_drifting_flag: False
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | latency_is_drifting_flag: False
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | requests_pct_drift_flag: False
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | errors_pct_drift_flag: True
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-07 20:05:47 | INFO | P5 | latency_pct_drift_flag: False
+2026-04-07 20:05:47 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | Pipeline executed successfully!
+2026-04-07 20:05:47 | INFO | P5 | ========================
+2026-04-07 20:05:47 | INFO | P5 | END main()
+2026-04-08 00:18:46 | INFO | P5 | === RUN START ===
+2026-04-08 00:18:46 | INFO | P5 | project=CINTEL
+2026-04-08 00:18:46 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 00:18:46 | INFO | P5 | python=3.14.2
+2026-04-08 00:18:46 | INFO | P5 | os=Windows 11
+2026-04-08 00:18:46 | INFO | P5 | shell=powershell
+2026-04-08 00:18:46 | INFO | P5 | cwd=.
+2026-04-08 00:18:46 | INFO | P5 | github_actions=False
+2026-04-08 00:18:46 | INFO | P5 | ========================
+2026-04-08 00:18:46 | INFO | P5 | START main()
+2026-04-08 00:18:46 | INFO | P5 | ========================
+2026-04-08 00:18:46 | INFO | P5 | ROOT_DIR = .
+2026-04-08 00:18:46 | INFO | P5 | REFERENCE_FILE = data\Apple_Sales_California_Mar2026.csv
+2026-04-08 00:18:46 | INFO | P5 | CURRENT_FILE = data\Apple_Sales_Missouri_Mar2026.csv
+2026-04-08 00:18:46 | INFO | P5 | OUTPUT_FILE = artifacts\drift_sales_summary_rucu.csv
+2026-04-08 00:18:46 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 00:23:35 | INFO | P5 | === RUN START ===
+2026-04-08 00:23:35 | INFO | P5 | project=CINTEL
+2026-04-08 00:23:35 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 00:23:35 | INFO | P5 | python=3.14.2
+2026-04-08 00:23:35 | INFO | P5 | os=Windows 11
+2026-04-08 00:23:35 | INFO | P5 | shell=powershell
+2026-04-08 00:23:35 | INFO | P5 | cwd=.
+2026-04-08 00:23:35 | INFO | P5 | github_actions=False
+2026-04-08 00:23:35 | INFO | P5 | ========================
+2026-04-08 00:23:35 | INFO | P5 | START main()
+2026-04-08 00:23:35 | INFO | P5 | ========================
+2026-04-08 00:23:35 | INFO | P5 | ROOT_DIR = .
+2026-04-08 00:23:35 | INFO | P5 | REFERENCE_FILE = data\Apple_Sales_California_Mar2026.csv
+2026-04-08 00:23:35 | INFO | P5 | CURRENT_FILE = data\Apple_Sales_Missouri_Mar2026.csv
+2026-04-08 00:23:35 | INFO | P5 | OUTPUT_FILE = artifacts\drift_sales_summary_rucu.csv
+2026-04-08 00:23:35 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 00:23:35 | INFO | P5 | Loaded 12 reference records
+2026-04-08 00:23:35 | INFO | P5 | Loaded 12 current records
+2026-04-08 00:26:59 | INFO | P5 | === RUN START ===
+2026-04-08 00:26:59 | INFO | P5 | project=CINTEL
+2026-04-08 00:26:59 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 00:26:59 | INFO | P5 | python=3.14.2
+2026-04-08 00:26:59 | INFO | P5 | os=Windows 11
+2026-04-08 00:26:59 | INFO | P5 | shell=powershell
+2026-04-08 00:26:59 | INFO | P5 | cwd=.
+2026-04-08 00:26:59 | INFO | P5 | github_actions=False
+2026-04-08 00:26:59 | INFO | P5 | ========================
+2026-04-08 00:26:59 | INFO | P5 | START main()
+2026-04-08 00:26:59 | INFO | P5 | ========================
+2026-04-08 00:26:59 | INFO | P5 | ROOT_DIR = .
+2026-04-08 00:26:59 | INFO | P5 | REFERENCE_FILE = data\Apple_Sales_California_Mar2026.csv
+2026-04-08 00:26:59 | INFO | P5 | CURRENT_FILE = data\Apple_Sales_Missouri_Mar2026.csv
+2026-04-08 00:26:59 | INFO | P5 | OUTPUT_FILE = artifacts\drift_sales_summary_rucu.csv
+2026-04-08 00:26:59 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 00:26:59 | INFO | P5 | Loaded 12 reference records
+2026-04-08 00:26:59 | INFO | P5 | Loaded 12 current records
+2026-04-08 19:05:56 | INFO | P5 | === RUN START ===
+2026-04-08 19:05:56 | INFO | P5 | project=CINTEL
+2026-04-08 19:05:56 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 19:05:56 | INFO | P5 | python=3.14.2
+2026-04-08 19:05:56 | INFO | P5 | os=Windows 11
+2026-04-08 19:05:56 | INFO | P5 | shell=powershell
+2026-04-08 19:05:56 | INFO | P5 | cwd=.
+2026-04-08 19:05:56 | INFO | P5 | github_actions=False
+2026-04-08 19:05:56 | INFO | P5 | ========================
+2026-04-08 19:05:56 | INFO | P5 | START main()
+2026-04-08 19:05:56 | INFO | P5 | ========================
+2026-04-08 19:05:56 | INFO | P5 | ROOT_DIR = .
+2026-04-08 19:05:56 | INFO | P5 | REFERENCE_FILE = data\Apple_Sales_California_Mar2026.csv
+2026-04-08 19:05:56 | INFO | P5 | CURRENT_FILE = data\Apple_Sales_Missouri_Mar2026.csv
+2026-04-08 19:05:56 | INFO | P5 | OUTPUT_FILE = artifacts\drift_sales_summary_rucu.csv
+2026-04-08 19:05:56 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 19:05:56 | INFO | P5 | Loaded 12 reference records
+2026-04-08 19:05:56 | INFO | P5 | Loaded 12 current records
+2026-04-08 19:09:35 | INFO | P5 | === RUN START ===
+2026-04-08 19:09:35 | INFO | P5 | project=CINTEL
+2026-04-08 19:09:35 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 19:09:35 | INFO | P5 | python=3.14.2
+2026-04-08 19:09:35 | INFO | P5 | os=Windows 11
+2026-04-08 19:09:35 | INFO | P5 | shell=powershell
+2026-04-08 19:09:35 | INFO | P5 | cwd=.
+2026-04-08 19:09:35 | INFO | P5 | github_actions=False
+2026-04-08 19:09:35 | INFO | P5 | ========================
+2026-04-08 19:09:35 | INFO | P5 | START main()
+2026-04-08 19:09:35 | INFO | P5 | ========================
+2026-04-08 19:09:35 | INFO | P5 | ROOT_DIR = .
+2026-04-08 19:09:35 | INFO | P5 | REFERENCE_FILE = data\Apple_Sales_California_Mar2026.csv
+2026-04-08 19:09:35 | INFO | P5 | CURRENT_FILE = data\Apple_Sales_Missouri_Mar2026.csv
+2026-04-08 19:09:35 | INFO | P5 | OUTPUT_FILE = artifacts\drift_sales_summary_rucu.csv
+2026-04-08 19:09:35 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 19:15:21 | INFO | P5 | === RUN START ===
+2026-04-08 19:15:21 | INFO | P5 | project=CINTEL
+2026-04-08 19:15:21 | INFO | P5 | repo_dir=cintel-05-drift-detection
+2026-04-08 19:15:21 | INFO | P5 | python=3.14.2
+2026-04-08 19:15:21 | INFO | P5 | os=Windows 11
+2026-04-08 19:15:21 | INFO | P5 | shell=powershell
+2026-04-08 19:15:21 | INFO | P5 | cwd=.
+2026-04-08 19:15:21 | INFO | P5 | github_actions=False
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | START main()
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | ROOT_DIR = .
+2026-04-08 19:15:21 | INFO | P5 | REFERENCE_FILE = data\reference_metrics_rucu.csv
+2026-04-08 19:15:21 | INFO | P5 | CURRENT_FILE = data\current_metrics_rucu.csv
+2026-04-08 19:15:21 | INFO | P5 | OUTPUT_FILE = artifacts\drift_summary_rucu.csv
+2026-04-08 19:15:21 | INFO | P5 | ARTIFACTS_DIR = artifacts
+2026-04-08 19:15:21 | INFO | P5 | Loaded 10 reference records
+2026-04-08 19:15:21 | INFO | P5 | Loaded 10 current records
+2026-04-08 19:15:21 | INFO | P5 | Calculated summary differences , percentage drift and drift flags
+2026-04-08 19:15:21 | INFO | P5 | Wrote drift summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_rucu.csv
+2026-04-08 19:15:21 | INFO | P5 | Drift summary dataframe:
+2026-04-08 19:15:21 | INFO | P5 | shape: (1, 18)
+┌──────────────┬──────────────┬──────────────┬──────────────┬───┬──────────────┬──────────────┬──────────────┬──────────────┐
+│ reference_av ┆ reference_av ┆ reference_av ┆ current_avg_ ┆ … ┆ latency_is_d ┆ requests_pct ┆ errors_pct_d ┆ latency_pct_ │
+│ g_requests   ┆ g_errors     ┆ g_latency_ms ┆ requests     ┆   ┆ rifting_flag ┆ _drift_flag  ┆ rift_flag    ┆ drift_flag   │
+│ ---          ┆ ---          ┆ ---          ┆ ---          ┆   ┆ ---          ┆ ---          ┆ ---          ┆ ---          │
+│ f64          ┆ f64          ┆ f64          ┆ f64          ┆   ┆ bool         ┆ bool         ┆ bool         ┆ bool         │
+╞══════════════╪══════════════╪══════════════╪══════════════╪═══╪══════════════╪══════════════╪══════════════╪══════════════╡
+│ 128.3        ┆ 2.3          ┆ 3835.0       ┆ 164.5        ┆ … ┆ true         ┆ false        ┆ true         ┆ false        │
+└──────────────┴──────────────┴──────────────┴──────────────┴───┴──────────────┴──────────────┴──────────────┴──────────────┘
+2026-04-08 19:15:21 | INFO | P5 | Let's make that a bit nicer to read...
+2026-04-08 19:15:21 | INFO | P5 | All remaining steps are about creating a nicer display.
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | Drift Detection Process: 
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | 1. Summarize each period with means.
+2026-04-08 19:15:21 | INFO | P5 | 2. Compute difference of means.
+2026-04-08 19:15:21 | INFO | P5 | 3. Flag drift if absolute difference of means exceeds a threshold.
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | Drift summary (one field per line):
+2026-04-08 19:15:21 | INFO | P5 | reference_avg_requests: 128.3
+2026-04-08 19:15:21 | INFO | P5 | reference_avg_errors: 2.3
+2026-04-08 19:15:21 | INFO | P5 | reference_avg_latency_ms: 3835.0
+2026-04-08 19:15:21 | INFO | P5 | current_avg_requests: 164.5
+2026-04-08 19:15:21 | INFO | P5 | current_avg_errors: 6.3
+2026-04-08 19:15:21 | INFO | P5 | current_avg_latency_ms: 5670.0
+2026-04-08 19:15:21 | INFO | P5 | requests_mean_difference: 36.2
+2026-04-08 19:15:21 | INFO | P5 | errors_mean_difference: 4.0
+2026-04-08 19:15:21 | INFO | P5 | latency_mean_difference_ms: 1835.0
+2026-04-08 19:15:21 | INFO | P5 | requests_pct_drift: 28.22
+2026-04-08 19:15:21 | INFO | P5 | errors_pct_drift: 173.91
+2026-04-08 19:15:21 | INFO | P5 | latency_pct_drift: 47.85
+2026-04-08 19:15:21 | INFO | P5 | requests_is_drifting_flag: False
+2026-04-08 19:15:21 | INFO | P5 | errors_is_drifting_flag: True
+2026-04-08 19:15:21 | INFO | P5 | latency_is_drifting_flag: True
+2026-04-08 19:15:21 | INFO | P5 | requests_pct_drift_flag: False
+2026-04-08 19:15:21 | INFO | P5 | errors_pct_drift_flag: True
+2026-04-08 19:15:21 | INFO | P5 | latency_pct_drift_flag: False
+2026-04-08 19:15:21 | INFO | P5 | Wrote long summary file: C:\Repos\Continous Intelligence\cintel-05-drift-detection\artifacts\drift_summary_long_rucu.csv
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | Pipeline executed successfully!
+2026-04-08 19:15:21 | INFO | P5 | ========================
+2026-04-08 19:15:21 | INFO | P5 | END main()
